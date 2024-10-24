@@ -1,0 +1,29 @@
+{
+  "name": "chavemestre",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "senha",
+    "gerador",
+    "API",
+    "Node.js"
+  ],
+  "author": "Giovanna Rodrigues <irodrigues708@gmail.com>",
+  "license": "ISC",
+  "description": "API para gerar e gerenciar senhas seguras associadas a diferentes plataformas.",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.3",
+    "sequelize": "^6.37.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
