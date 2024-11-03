@@ -1,15 +1,13 @@
 const express = require('express');
 const app = express();
-
 app.use(express.json());
+const sequelize = require('./config/db');
+const usuariosRoutes = require('./routes/usuarios');
+const senhasRoutes = require('./routes/senhas');
+const plataformasRoutes = require('./routes/plataforma');
 
-// Rotas de teste
-app.get('/health', (req, res) => {
-  res.status(200).send('API está funcionando!');
-});
-
-app.post('/user', (req, res) => {
-  res.status(201).send('usuário criado');
-});
+app.use('/usuarios', usuariosRoutes);
+app.use('/senhas', senhasRoutes);
+app.use('/plataformas', plataformasRoutes);
 
 module.exports = app; 
