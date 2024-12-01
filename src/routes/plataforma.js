@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const plataformasController = require('../controllers/platController');
+const platController = require('../controllers/platController');
+const auth = require ('../middlewares/auth');
 
-router.get('/getAllPlat', plataformasController.getAllPlatforms);
-router.get('/getPlat/:codPlataforma', plataformasController.getPlatformByCode);
+router.get('/getAllPlat', auth, platController.getAllPlatforms);
+router.get('/getPlat/:codPlataforma', auth, platController.getPlatformByCode);
 
-/* funções de criar/atualizar plataformas serão feitas manualmente dentro do código, 
-por exigirem uma nova lógica de geração de senhas com base nos requisitos de cada uma */
+/* vou criar as rotas para criar plataformas com controle de acesso, de forma que só eu possa acessar */
 
 module.exports = router;
